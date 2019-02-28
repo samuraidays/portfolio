@@ -367,48 +367,77 @@
                     <div class="col-lg-12">
                         <div class="text-center">
                             <h2><span class="font-weight-bold">Contact</span> Us</h2>
-                            <p class="text-muted mx-auto section-subtitle mt-3">It is a long established fact that a reader will be of a page when established fact looking at its layout.</p>
+                            <p class="text-muted mx-auto section-subtitle mt-3">ご相談、ご質問についてはこちらからお問い合わせをお願いします。</p>
                         </div>
                     </div>
                 </div> 
-
+                <script>
+                    function showThxMessage(){
+                       var email = document.myForm.emailAddress.value;
+                       if(email !== ''){
+                           var thxDiv = document.getElementById('thxMessage');
+                           thxDiv.getElementsByTagName('span')[0].innerHTML = email;
+                           document.myForm.reset();
+                           document.getElementById('formWrapper').style.display = 'none';
+                           thxDiv.style.display = 'block';
+                       }
+                    }
+                </script>
                 <div class="row mt-5">
                     <div class="col-lg-12">
-                        <div class="form-kerri">
-                            <form>
+                        <div class="form-kerri" id="formWrapper">
+                            <form action="https://docs.google.com/forms/d/e/1FAIpQLSc-m7BvZEoOafjqwNqDJcq-8CgGH9NXsn_aLWWnbOQOY4lizg/formResponse" method="post" name="myForm" target="dummyIframe">
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group mt-2">
-                                            <input name="name" id="name" type="text" class="form-control" placeholder="Your Name*" required>
+                                            <input name="entry.1709350766" id="name" type="text" class="form-control" placeholder="Your Name*" required>
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group mt-2">
-                                            <input name="email" id="email" type="email" class="form-control" placeholder="Your Email*" required>
+                                            <input name="emailAddress" id="email" type="email" class="form-control" placeholder="Your Email*" required>
                                         </div>
                                     </div>                                
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="form-group mt-2">
-                                            <input type="text" class="form-control" id="subject" placeholder="Your Subject.." required/>
+                                            <input name="entry.162363482" type="text" class="form-control" id="company" placeholder="Your Company.." required/>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="form-group mt-2">
-                                            <textarea name="comments" id="comments" rows="4" class="form-control" placeholder="Your message..."></textarea>
+                                            <textarea name="entry.1662435304" id="comments" rows="4" class="form-control" placeholder="Your message..."></textarea>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-12 text-right">
-                                        <a href="#" class="btn btn-custom">Submit</a>
+                                        <!--<a href="#" class="btn btn-custom">Submit</a>-->
+                                        <input type="submit" class="btn btn-custom" value="送信">
                                     </div>
                                 </div>
                             </form>
-                        </div>  
+                            <iframe name="dummyIframe" style="display:none;" onload="showThxMessage()"></iframe>
+                        </div>
+                        <div id="thxMessage" class="animated fadeIn" style="display:none;">
+                            <div class="afterformtit">お問い合わせありがとうございました</div>
+                            <div class="formtxt">数日以内に返信をさせていただきます。</div>
+                        </div>
+                        <script>
+                            function showThxMessage(){
+                               var email = document.myForm.emailAddress.value;
+                               if(email !== ''){
+                                   var thxDiv = document.getElementById('thxMessage');
+                                   thxDiv.getElementsByTagName('span')[0].innerHTML = email;
+                                   document.myForm.reset();
+                                   document.getElementById('formWrapper').style.display = 'none';
+                                   thxDiv.style.display = 'block';
+                               }
+                            }
+                        </script>
                     </div>
                 </div>
             </div>
